@@ -1,0 +1,27 @@
+{
+  "name": "mmntm repost",
+  "version": "1.0.0",
+  "description": "",
+  "icons": {
+    "16": "assets/icon_16.png",
+    "32": "assets/icon_32.png",
+    "48": "assets/icon_48.png",
+    "128": "assets/icon_128.png"
+  },
+  "manifest_version": 3,
+  "action": {
+    "default_title": "repost to mmntm"
+  },
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "permissions": [
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://linkedin.com/*",
+    "https://twitter.com/*",
+    "https://app.mmntm.build/*"
+  ]
+}
