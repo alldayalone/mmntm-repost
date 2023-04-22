@@ -20,8 +20,6 @@
     "tabs"
   ],
   "host_permissions": [
-    "https://linkedin.com/*",
-    "https://twitter.com/*",
-    "https://app.mmntm.build/*"
+    "https://app.mmntm.build/write"
   ]
 }
