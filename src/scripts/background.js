@@ -1,13 +1,23 @@
-chrome.action.onClicked.addListener(tab => {
+function startMmntmRepost(url) {
   chrome.tabs.create({
     url: "https://app.mmntm.build/write",
   }, (mmntmTab) => {
     chrome.scripting.executeScript({
       target: { tabId: mmntmTab.id },
       func: run,
-      args: [tab.url]
+      args: [url || tab.url]
     });
   });
+}
+
+chrome.action.onClicked.addListener(tab => {
+  startMmntmRepost();
+});
+
+chrome.runtime.onMessage.addListener(request => {
+  if (request.cmdName === "repost") {
+    startMmntmRepost(request.url);
+  }
 });
 
 function run(repostLink) {
