@@ -1,0 +1,12 @@
+a.mmntm {
+ background-image: url("https://pbs.twimg.com/profile_images/1618711441883766785/a2xOrH84_400x400.jpg");
+  background-size: cover;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 15%;
+  cursor: pointer;
+}
+
+a.mmntm:hover {
+    border-radius: 30%;
+}
