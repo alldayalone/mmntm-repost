@@ -1,10 +1,12 @@
 setInterval(async () => {
     document.querySelectorAll(`article[data-testid="tweet"`).forEach((node) =>{
-        const existingNode = node.querySelector('a[x-mmntm="1"]');
+        const existingNode = node.querySelector('a.mmntm');
 
         if (existingNode) return;
 
-        const tweetUrl = node.querySelector(`time`).parentNode?.getAttribute("href");
+        const tweetUrl = node.querySelector('time')?.parentNode?.getAttribute("href");
+
+        if (!tweetUrl) return;
 
         const repostMmntmNode = document.createElement('a');
         repostMmntmNode.setAttribute("class", "mmntm");
